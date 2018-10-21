@@ -4,14 +4,26 @@ import Home from "./views/Home.vue";
 
 Vue.use(Router);
 
-export default new Router({
+const titlePrefix = "Retro - ";
+
+const router = new Router({
   mode: "history",
   base: process.env.BASE_URL,
   routes: [
     {
       path: "/",
       name: "home",
-      component: Home
+      component: Home,
+      meta: {
+        title: `${titlePrefix} Home`
+      }
     }
   ]
 });
+
+router.beforeEach((to, from, next) => {
+  document.title = to.meta.title;
+  next();
+});
+
+export default router;
