@@ -21,27 +21,27 @@
 </template>
 
 <script>
-  export default {
-    name: "SideBar",
-    props: {
-      items: Array
+export default {
+  name: "SideBar",
+  props: {
+    items: Array
+  },
+  methods: {
+    linkTo: function(route) {
+      this.$router.push(route);
     },
-    methods: {
-      linkTo: function (route) {
-        this.$router.push(route);
-      },
 
-      isActive: function (route) {
-        return this.$route.path === route;
-      }
-    },
+    isActive: function(route) {
+      return this.$route.path === route;
+    }
   }
+};
 </script>
 
 <style lang="scss" scoped>
-  .side-bar-item {
-    &--active {
-      background: rgba(255,255,255,0.08);
-    }
+.side-bar-item {
+  &--active {
+    background: rgba(255, 255, 255, 0.08);
   }
+}
 </style>

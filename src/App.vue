@@ -14,20 +14,21 @@
 </template>
 
 <script>
-  import mainStyle from './assets/css/main.scss';
-  import SideBar from "@/components/SideBar.vue";
+import "./assets/css/main.scss";
+import SideBar from "@/components/SideBar.vue";
 
-  export default {
-    name: "App",
-    components: {
-      SideBar
-    },
-    data() {
-      return {
-        items: [
-          { title: 'Home', icon: 'dashboard', link: '/' }
-        ],
-      };
-    }
-  };
+export default {
+  name: "App",
+  components: {
+    SideBar
+  },
+  data() {
+    return {
+      items: [
+        { title: "Home", icon: "dashboard", link: "/" },
+        { title: "Times", icon: "group", link: "/times" }
+      ]
+    };
+  }
+};
 </script>
