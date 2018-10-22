@@ -1,5 +1,5 @@
 <template>
-  <v-navigation-drawer permanent dark absolute>
+  <v-navigation-drawer permanent dark absolute floating>
     <v-list dense>
       <v-list-tile
         v-for="item in items"
