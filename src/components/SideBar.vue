@@ -6,7 +6,7 @@
         :key="item.title"
         @click="linkTo(item.link)"
         class="side-bar-item"
-        v-bind:class="{ 'side-bar-item--active': isActive(item.link) }"
+        v-bind:class="{ 'side-bar-item--active': isActive(item.session) }"
       >
         <v-list-tile-action>
           <v-icon>{{ item.icon }}</v-icon>
@@ -31,8 +31,8 @@ export default {
       this.$router.push(route);
     },
 
-    isActive: function(route) {
-      return this.$route.path === route;
+    isActive: function(session) {
+      return this.$route.meta.session === session;
     }
   }
 };
