@@ -2,6 +2,7 @@ import Vue from "vue";
 import Router from "vue-router";
 import Home from "./views/Home.vue";
 import Teams from "./views/Teams.vue";
+import TeamDetails from "@/views/TeamDetails.vue"
 
 Vue.use(Router);
 
@@ -16,7 +17,8 @@ const router = new Router({
       name: "home",
       component: Home,
       meta: {
-        title: `${titlePrefix} Home`
+        title: `${titlePrefix} Home`,
+        session: "home"
       }
     },
     {
@@ -24,7 +26,17 @@ const router = new Router({
       name: "times",
       component: Teams,
       meta: {
-        title: `${titlePrefix} Times`
+        title: `${titlePrefix} Times`,
+        session: "teams"
+      }
+    },
+    {
+      path: "/times/:id",
+      name: "time-detalhes",
+      component: TeamDetails,
+      meta: {
+        title: `${titlePrefix} Detalhe Time`,
+        session: "teams"
       }
     }
   ]

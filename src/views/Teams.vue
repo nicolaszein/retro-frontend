@@ -18,7 +18,7 @@
 
 
     <v-list>
-      <v-list-tile v-for="team in teams" :key="team.name">
+      <v-list-tile v-for="team in teams" :key="team.name" @click="teamDetails(team.id)">
         <v-list-tile-action>
           <v-icon>group_work</v-icon>
         </v-list-tile-action>
@@ -42,7 +42,7 @@
 </template>
 
 <script>
-  import axios from "../api";
+  import axios from "@/api";
   import CreateTeam from "@/components/modals/CreateTeam.vue"
 
   export default {
@@ -62,6 +62,10 @@
       appendTeam: function(team) {
         this.teams.push(team);
         this.closeModal();
+      },
+
+      teamDetails: function(id) {
+        this.$router.push(`/times/${id}`);
       },
 
       fetchTeams: function() {

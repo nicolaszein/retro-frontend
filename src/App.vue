@@ -25,8 +25,8 @@ export default {
   data() {
     return {
       items: [
-        { title: "Home", icon: "dashboard", link: "/" },
-        { title: "Times", icon: "group", link: "/times" }
+        { title: "Home", icon: "dashboard", link: "/", session: "home" },
+        { title: "Times", icon: "group", link: "/times", session: "teams" }
       ]
     };
   }
